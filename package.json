@@ -1,0 +1,25 @@
+{
+  "name": "nft-deployer",
+  "version": "1.0.2",
+  "description": "Deployer NFT on TON blockchain. Developer's telegram: @NekitKuzmenko",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NekitKuzmenko/nft-deployer.git"
+  },
+  "author": "NekitKuzmenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NekitKuzmenko/nft-deployer/issues"
+  },
+  "homepage": "https://github.com/NekitKuzmenko/nft-deployer#readme",
+  "dependencies": {
+    "@orbs-network/ton-access": "^2.3.3",
+    "ton": "^13.5.0",
+    "ton-core": "^0.49.1",
+    "ton-crypto": "^3.2.0"
+  }
+}

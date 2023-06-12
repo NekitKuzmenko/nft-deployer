@@ -1,0 +1,22 @@
+{
+    "network": "testnet",
+    "wallet_version": "v4",
+    "mnemonic": "",
+    "deploy_collection": {
+        "need": false,
+        "meta_link": "",
+        "base_link": "",
+        "royalty": 0.1
+    },
+    "deploy_nft":false,
+    "collection":"",
+    "nft":[{
+        "meta_path":"0/meta.json",
+        "price":1,
+        "count:":15
+    }, {
+        "meta_path":"1/meta.json",
+        "price":1.5,
+        "count:":15
+    }]
+}
