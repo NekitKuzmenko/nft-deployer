@@ -1,6 +1,6 @@
 {
   "name": "nft-deployer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Deployer NFT on TON blockchain. Developer's telegram: @NekitKuzmenko",
   "main": "app.js",
   "scripts": {

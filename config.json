@@ -8,15 +8,23 @@
         "base_link": "",
         "royalty": 0.1
     },
-    "deploy_nft":false,
+    "deploy_nft":true,
     "collection":"",
     "nft":[{
-        "meta_path":"0/meta.json",
+        "meta_path":"4/meta.json",
         "price":1,
-        "count:":15
+        "count":10
     }, {
-        "meta_path":"1/meta.json",
-        "price":1.5,
-        "count:":15
+        "meta_path":"5/meta.json",
+        "price":2,
+        "count":10
+    }, {
+        "meta_path":"6/meta.json",
+        "price":3,
+        "count":10
+    }, {
+        "meta_path":"7/meta.json",
+        "price":4,
+        "count":10
     }]
 }

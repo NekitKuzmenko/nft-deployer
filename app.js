@@ -22,6 +22,9 @@ const config = JSON.parse(fs.readFileSync(`config.json`));
 
     if(config.network === 'mainnet') client = new ton.TonClient({ endpoint: await ton_access.getHttpEndpoint({ network: "mainnet" }) }); else client = new ton.TonClient({ endpoint: await ton_access.getHttpEndpoint({ network: "testnet" }) });
 
+
+    //return console.log((await client.callGetMethod('EQBjrDIuwOVOfnsGHNrCgy-IvERx-OJW9bJQRh7tZxyw9MG_', 'get_collection_data')).stack.items[1].cell.asSlice().loadStringTail());
+
     let key = await ton_crypto.mnemonicToWalletKey(config.mnemonic.split(" "));
     let wallet;
 
@@ -86,7 +89,7 @@ const config = JSON.parse(fs.readFileSync(`config.json`));
     if(config.deploy_nft) for(let i = 0; i < config.nft.length; i++) {
 
         let nft = config.nft[i];
-
+        
         if(nft.price) {
 
             if(!nft.count) {
@@ -111,7 +114,7 @@ const config = JSON.parse(fs.readFileSync(`config.json`));
 
                     } else owner = default_owner;
 
-                    sale_address = await saleNFT(walletContract, walletSender, owner, nft_address, ton.toNano(`${nft.price}`), royalty);
+                    sale_address = await deploySale(walletContract, walletSender, owner, nft_address, ton.toNano(`${nft.price}`), royalty);
         
                     console.log(`Deploying NFT contract (${nft_address})`);
         
@@ -121,9 +124,9 @@ const config = JSON.parse(fs.readFileSync(`config.json`));
 
                     index++;
         
-                } catch {
+                } catch(err) {
         
-                    console.log(`\n\n\nerror while minting!\n\n\n`);
+                    console.log(`\n\n\nerror while minting!\n\n\n`, err);
         
                     i--;
         
@@ -151,7 +154,7 @@ const config = JSON.parse(fs.readFileSync(`config.json`));
 
                     } else owner = default_owner;
 
-                    sale_address = await saleNFT(walletContract, walletSender, owner, nft_address, ton.toNano(`${nft.price}`), royalty);
+                    sale_address = await deploySale(walletContract, walletSender, owner, nft_address, ton.toNano(`${nft.price}`), royalty);
         
                     console.log(`Deploying NFT contract (${nft_address})`);
         
@@ -161,7 +164,7 @@ const config = JSON.parse(fs.readFileSync(`config.json`));
 
                     index++;
         
-                } catch {
+                } catch(err) {
         
                     console.log(`\n\n\nerror while minting!\n\n\n`);
         
